@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+}
+.icons i {
+  padding: 3px 3px;
+}
+.contact {
+  padding: 1px 3px;
+}
+.links a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+}
+.customHeader {
+  padding: 5px 100px;
+  background-color: rgb(124, 224, 154);
+  color: white;
+}
+.buttonDonate button {
+  border-radius: 18px;
+}
+.logo-custom {
+  max-width: 50%;
+}
+.customNav {
+  padding: 0 10%;
+}
+.customUL .nav-link {
+  text-transform: uppercase;
+  color: #1adb00;
+  padding-top: 1%;
+  border-right: 1px solid lightgreen;
+  height: 30px;
+}
+.nav-item:last-child .nav-link:last-child {
+  border: none;
+}
+.heroDiv {
+  background-image: url("./components/images/hero.jpg");
+  height: 600px;
+  width: 105%;
+  margin: 10px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: screen;
+  background-color: rgb(18, 112, 86);
+  position: relative;
+}
+.hero-heading {
+  text-transform: uppercase;
+  font-style: italic;
+  left: 5%;
+  position: absolute;
+  top: 20%;
+}
+.hero-heading .display-1 {
+  position: absolute;
+  left: 10%;
+}
+.help-us {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  margin: 3%;
+}
+.hero-footer {
+  background-color: rgba(124, 224, 154, 0.3);
+  position: absolute;
+  bottom: 0%;
+}
+
+.banner-1-custom {
+  height: 300px;
+  background-color: #8fdd8c;
+  color: rgb(127, 100, 214);
+  display: flex;
+  flex-direction: column;
+  padding: 0 250px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-1-custom span {
+  margin: 15px 0;
+  width: 50px;
+  height: 1px;
+  border-top: 5px solid rgb(127, 100, 214);
+}
+
+.circle-div-container {
+  position: relative;
+  height: 300px;
+  width: 809px;
+}
+.circular-div {
+  height: 200px;
+  width: 200px;
+  text-transform: uppercase;
+  color: rgb(0, 255, 106);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  border: 1px solid rgb(0, 255, 106);
+  top: 20%;
+}
+.circular-div i {
+  font-size: 2em;
+}
+
+.circular-div span {
+  text-align: center;
+}
+
+.circular-div.cr1 {
+  left: 21%;
+}
+.circular-div.cr2 {
+  background-color: rgb(0, 255, 106);
+  left: 40%;
+  color: #fff;
+  border: none;
+  z-index: 2;
+}
+.circular-div.cr3 {
+  left: 60%;
+}
+
+.donate-info-btn-con .btn {
+  border-radius: 20px;
+  height: 30px;
+  width: 120px;
+  font-size: 14px;
+  margin: 10px 10px;
+  padding: 5px 5px;
+}
+.donate-info-btn-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdon {
+  padding: 10px 300px;
+}
+
+.supNum {
+  color: #1adb00;
+  font-weight: 700;
+}
+.cardHeading .display-6 {
+  font-weight: 400;
+  margin: 10px 0;
+}
+.hr {
+  width: 6%;
+  border-top: 3px solid #1adb00;
+  margin: 3px 0;
+}
+
+.secondLogo {
+  max-width: 10%;
+}
+
+.cardImg {
+  width: 100%;
+  padding: 0px;
+}
+
+.mission {
+  background-color: #1aa308;
+  color: white;
+}
+
+.hrm {
+  width: 10%;
+  border-top: 3px solid white;
+  margin: 3px 0;
+}
+.cardContent {
+  margin: 30px 10px;
+  text-align: center;
+}
+.cardBtn {
+  border-radius: 18px;
+}
+
+.banner2 {
+  background-image: url("./components/images/sapling.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75vh;
+  background-color: #4ca048;
+  background-blend-mode: screen;
+}
+
+.banner2Content {
+  margin-top: 20%;
+  font-weight: 300;
+  color: #e03131;
+}
+
+.volBtn {
+  margin: 5% 0;
+  display: flex;
+  justify-content: center;
+}
+.volBtn button {
+  border-radius: 18px;
+  padding: 4px 20px;
+  font-size: 20px;
+  margin-right: 150px;
+}
+
+.iconsLogo {
+  font-size: 100px;
+  color: #ca1c1c;
+  margin-top: 20%;
+}
+.iconsLogo i {
+  margin-left: 120px;
+}
+
+.iconsLogo p {
+  font-size: 30px;
+  text-align: center;
+  margin-left: 110px;
+}
+
+.chart-para {
+  font-size: 22px;
+}
+
+.chart-list {
+  color: #ff6400;
+}
+.custom-chart-btn {
+  background-color: #f3670a;
+  border-radius: 18px;
+  color: white;
+  padding: 7px 20px;
+  margin: 7px 0px;
+}
+.custom-chart {
+  background-color: rgb(233, 227, 227);
+}
+.chart-container {
+  height: 500px;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 80px;
+  padding-left: 30px;
+  position: relative;
+}
+.chart {
+  width: 45px;
+  background-color: #4ca048;
+  position: relative;
+}
+.span-per {
+  margin-left: 8px;
+  color: rgb(75, 187, 41);
+}
+
+.andarKaSpan {
+  position: absolute;
+  transform: rotate(270deg);
+  width: 100px;
+  bottom: 50px;
+  left: -28px;
+  color: white;
+  font-size: 16px;
+}
+
+.card-span {
+  width: 5%;
+  border-top: 3px solid rgb(20, 201, 95);
+  margin: 5px 0;
+}
+
+.card-para-2 {
+  padding: 30px 250px;
+  color: #288a1b;
+}
+.main-event {
+  background-image: url("./components/images/event.jpg");
+  background-size: cover;
+  height: 85vh;
+  width: 80%;
+  margin: auto;
+  background-blend-mode: screen;
+  background-color: #726f6f;
+}
+
+.eventCard {
+  width: 100%;
+  height: 40vh;
+  margin: 40% 30%;
+  background-color: rgba(22, 22, 22, 0.4);
+  padding: 20px;
+}
+
+.spanEvent {
+  color: #06472c;
+  font-weight: 600;
+}
+
+.spanE {
+  margin: 2% 1%;
+  width: 10%;
+  border-top: 3px solid #f3670a;
+}
+
+.upcomingEvent {
+  margin: 100px 10px 0px 0px;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 70vh;
+  height: 55vh;
+}
+
+.event-para {
+  padding-right: 30px;
+  color: #0a5523;
+}
+.calender {
+  background-color: rgba(31, 30, 30, 0.2);
+  width: 70px;
+  height: 70px;
+  color: white;
+  padding: 5px 0px;
+}
+.calender .digit {
+  padding: 6px 22px;
+}
+.month {
+  padding: 5px 16px;
+}
+.cal-head p {
+  font-size: 12px;
+}
+.foot {
+  padding-bottom: 8px;
+  border-bottom: 1px solid#1adb00;
+}
+
+.logot {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1adb00;
+}
+.footImg {
+  width: 100px;
+}
+
+.mt {
+  margin-top: 8%;
+}
+
+.card-img-top {
+  height: 250px;
+}
+.card-title {
+  font-size: 15px;
+}
+.card-text {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.avatars {
+  max-width: 100px;
+  padding: 0px 0px;
+}
+
+.line4 {
+  border-top: 4px solid #1adb00;
+  height: 2px;
+  width: 50px;
+  margin: 0 auto;
+}
+
+.volun {
+  position: relative;
+  margin: 30px 0px 10px 0px;
+  padding: 60px 170px;
+  text-align: justify;
+  font-style: italic;
+  background-color: #d1f0d1;
+}
+.volun .quotes {
+  position: absolute;
+  left: 48.1%;
+  top: -20px;
+  background-color: #2e884c;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.bold{
+  font-weight: 400;
+  font-style: italic;
+}
+.bolder{
+  font-weight: 500;
+  font-style: italic;
+}
+.customSlider{
+  margin-top:4%;
+}
+.line5{
+  border-top:3px solid#1aa308;
+  width: 8%;
+  margin: 1% 0% 1.5% 1.5%;
+}
+.formDiv{
+  position:relative;
+  margin-left: 10%;
+}
+.formImg{
+  position: absolute;
+  width:30%;
+  right: 15%;
+  top:30px;
+}
