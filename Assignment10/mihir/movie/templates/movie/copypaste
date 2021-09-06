@@ -1,0 +1,10 @@
+{% extends "movie\basichtml.html"%}
+{% block title %}
+    HOME TITLE
+{% endblock title%}
+
+{% block css%}
+   
+{% endblock css%}
+{% block body%}
+{% endblock body %}

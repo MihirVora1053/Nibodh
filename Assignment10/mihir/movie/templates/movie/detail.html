@@ -1,0 +1,37 @@
+{% extends "movie\basichtml.html"%} {% block title %} TITLE {% endblock title%}
+{% block css%} .img-hero{ max-height:50vh; min-width:100vw; } {% endblock css%}
+{% block body%} {% if error == "null" %}
+<img src="\media\{{data.poster}}" alt="" class="img-hero" />
+<div class="container">
+    <h1 class="display-1 text-center">{{data.name}}</h1>
+    <p class="display-4">{{data.director_name}}</p>
+    <div class="text-center">
+        <button class="btn btn-primary" onclick="addToCart('{{i.id}}')">Add To Like</button>
+    </div>
+</div>
+{% else %}
+<h1 class="display-1 text-danger text-center">{{error}}</h1>
+
+{% endif %}
+ {% endblock body %}
+ {% block script %}
+      <script>
+    const addToCart=(id)=>{
+      var cart=JSON.parse(localStorage.getItem("cart"))
+      if(cart){
+        if(cart[id]){
+          cart[id]=cart[id]+1;
+        }
+        else{
+          cart[id]=1;
+        }
+      }
+      else{
+        cart={[id]:1};
+      }
+      localStorage.setItem("cart",JSON.stringify(cart))
+      var val=JSON.parse(localStorage.getItem("cart"))
+      document.getElementById("fav").innerHTML=val?Object.keys(val).length:0;
+    }
+  </script>
+ {% endblock script %}

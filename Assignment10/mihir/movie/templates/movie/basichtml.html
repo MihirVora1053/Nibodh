@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+
+    {% block title%}
+
+    {% endblock title %}
+
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <style>
+    {% block css %}
+
+    {% endblock css %}
+  </style>
+  {% block head %}
+  {% endblock head %}
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Mihir</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/movie">Movie Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/movie/bloglist/">Movie Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/movie/list">Movies List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/movie/contactus">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            {% comment %} <a class="nav-link" href="#">Favourites (<span id="fav">0</span>)</a> {% endcomment %}
+            <!-- Button trigger modal -->
+            <button onclick="putDataInPopUp()" type="button" class="btn nav-link" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">
+              Favourites (<span id="fav">0</span>)
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Favourite Movies</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <ul class="list-group" id="cart-items">
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <form action="/movie/checkout/" method="POST">
+                      {% csrf_token %}
+                      <input type="hidden" id="card-hidden" name="cartJson">
+                      <button onclick="addHiddenVal()" type="submit" href="" class="btn btn-success">
+                        Checkout
+                      </button>
+                    </form>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          {% comment %} </li>
+          </li> {% endcomment %}
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  {% block body %}
+  {% endblock body%}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  {% block script %}{% endblock script %}
+  <script>
+    const addHiddenVal=()=>{
+				var input = document.getElementById("card-hidden");
+				input.value = localStorage.getItem("cart");
+			}
+    var val = JSON.parse(localStorage.getItem("cart"))
+    document.getElementById("fav").innerHTML = Object.keys(val).length;
+    const putDataInPopUp = () => {
+      var cart = JSON.parse(localStorage.getItem("cart"));
+      var htmlStr = "";
+      console.log(cart);
+      if (Object.keys(cart).length === 0) {
+        htmlStr = '<li class="list-group-item"><h6>You dont have any movie in your fav list.Please <a href="/movie/list">Click here</a> to add movie</h6></li>'
+      }
+      else {
+        Object.keys(cart).map((item) => {
+          htmlStr = htmlStr + " " + `<li class="list-group-item d-flex justify-content-between"><span style="width:125px">${cart[item].name}</span><span class="badge bg-primary">${cart[item].verdict}</span><button onclick="removeFav(${item})" class="badge bg-danger">REMOVE</button></li>`;
+        });
+
+      }
+      document.getElementById("cart-items").innerHTML = htmlStr;
+      up();
+    }
+
+    const removeFav = (id) => {
+      var cart = JSON.parse(localStorage.getItem("cart"))
+      delete cart[id];
+      localStorage.setItem("cart", JSON.stringify(cart))
+      putDataInPopUp()
+
+    }
+
+    const up = () => {
+      var value = JSON.parse(localStorage.getItem("cart"))
+      document.getElementById("fav").innerHTML = Object.keys(value).length;
+    }
+  </script>
+</body>
+
+</html>

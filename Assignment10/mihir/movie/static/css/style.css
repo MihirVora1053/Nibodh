@@ -1,0 +1,9 @@
+h1{
+    color:red;
+}
+.movie-container{
+    flex-wrap: wrap;
+}
+.card-img-top{
+    max-height: 300px;
+}
