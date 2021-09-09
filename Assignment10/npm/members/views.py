@@ -28,10 +28,10 @@ def loginForm(request):
 
         else:
             messages.add_message(request, messages.ERROR, 'Email or password is not valid. ')
-            return redirect("/member/login/")
+            return redirect("/members/login/")
     else:
         messages.add_message(request, messages.ERROR, 'Please Login.')
-        return redirect("/member/login/")
+        return redirect("/members/login/")
     
 def signup(request):
     if request.method == "POST":
