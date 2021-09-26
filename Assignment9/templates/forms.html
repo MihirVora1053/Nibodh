@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+    <form action="/showdata/" method="POST">
+        {% csrf_token %}
+      <div class="row justify-content-center mt-3">
+        <div class="card px-0 col-10">
+          <div class="card-header bg-warning display-6 text-white text-center">
+            Fill your details
+          </div>
+          <div class="col-12">
+            <div class="my-3 row">
+              <div class="col-6">
+                <div class="row px-2 justify-content-center">
+                  <label for="firstname" class="col-sm-3 col-form-label"
+                    >First Name</label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      name="firstname"
+                      type="text"
+                      class="form-control"
+                      id="firstname"
+                      placeholder="First Name"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="row px-2 justify-content-center">
+                  <label for="lastname" class="col-sm-3 col-form-label"
+                    >Last Name</label
+                  >
+                  <div class="col-sm-6">
+                    <input
+                      name="lastname"
+                      type="text"
+                      class="form-control"
+                      id="lastname"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="my-3 row">
+                <div class="col-6">
+                  <div class="row px-2 justify-content-center">
+                    <label for="email" class="col-sm-3 col-form-label"
+                      >Email</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        name="email"
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Email"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row px-2 justify-content-center">
+                    <label for="password" class="col-sm-3 col-form-label"
+                      >Password</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        name="password"
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        placeholder="Password"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+            </div>
+            <div class="my-3 row">
+                <div class="col-6">
+                  <div class="row px-2 justify-content-center">
+                    <label for="email" class="col-sm-3 col-form-label"
+                      >Phone Number</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="tel"
+                        name="phone"
+                        class="form-control"
+                        id="Phone"
+                        placeholder="Phone"
+                        maxlength="10"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row px-2 justify-content-center">
+                    <label for="dob" class="col-sm-3 col-form-label"
+                      >Date Of Birth</label
+                    >
+                    <div class="col-sm-6">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="dob"
+                        name="dob"
+                        placeholder="DOB"
+                      />
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="my-3 row">
+                <div class="col-12">
+                  <div class="row px-2 m justify-content-center">
+                    <label for="fav" style="margin-left: -44px;" class="col-sm-3 col-form-label"
+                      >Your Favoutite Youtube Video</label
+                    >
+                    <div class="col-sm-7">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="link"
+                        id="fav"
+                        placeholder="Paste Your Link Here"
+                      />
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="row my-3 justify-content-center">
+                <div class="col">
+                    <button style="margin-left: 73px;" class="btn btn-block btn-warning text-white px-5">Submit Details</button>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+    </form>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

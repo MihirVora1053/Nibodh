@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <div class="col-10">
+                <div class="card">
+                    <div class="card-header text-white text-center bg-primary">
+                        <h1 class="display-5">Your Entered Details</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+                                <h3>Your Name is {{firstname}} {{lastname}}</h3>
+                            </div>
+                            <div class="col-12">
+                                <h3>Your Email is {{email}} and Password is {{password}}</h3>
+                            </div>
+                            <div class="col-12">
+                                <h3>Your Phone Number is {{phone}} and Date Of Birth is {{dob}} </h3>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center">
+                                <a target="_blank" class="btn btn-primary" href="{{link}}">Click Here To View Your Favourite Video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
