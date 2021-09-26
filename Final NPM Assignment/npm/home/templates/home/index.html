@@ -1,0 +1,80 @@
+{% extends "html\basic.html"%}
+{% block title %}
+    HOME TITLE
+{% endblock title%}
+
+{% block css%}
+    .carousel{
+      
+      width:50%;
+      height:50%;
+      display-flex;
+      margin:auto;
+    }
+    .carousel img{
+      height:55vh;
+    }
+{% endblock css%}
+{% block body%}
+    {% if messages %}
+<ul class="messages list-unstyled">
+    {% for message in messages %}
+    <li {% if message.tags %}>
+
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong> {{ message }} </strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Mihir Vora Project Management</h1>
+        {% if user.is_authenticated  %}
+        Welcome {{request.user.last_name}}
+        {% endif %}
+        <p class="">MVP (Mihir Vora Project Management) ! is an India massive open online course provider founded in 2012 by Stanford University computer science professors Andrew Ng and Daphne Koller.Nibodhera works with universities and other organizations to offer online courses, certifications, and degrees in a variety of subjects. In 2021 it was estimated that about 150 universities offered more 4,000 courses through Nibodhera.</p>
+        {% if not user.is_authenticated %}
+        <div class="d-flex">
+          <p class="mx-2"><a class="btn btn-primary btn-lg" href="/members/login" role="button">Login &raquo;</a></p>
+          <p><a class="btn btn-primary btn-lg" href="/members/signup" role="button">Sign Up &raquo;</a></p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://i.ytimg.com/vi/38NlUmiIe04/maxresdefault.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/myour-wordpress-resume-theme.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://bootstrapmade.com/content/templatefiles/Kelly/Kelly-bootstrap-website-template-md.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+  </main>
+
+  <footer class="container">
+    <p class="text-center mt-5">&copy; Reserved MVP Company 2021-2022</p>
+  </footer>
+
+{% endblock body %}
